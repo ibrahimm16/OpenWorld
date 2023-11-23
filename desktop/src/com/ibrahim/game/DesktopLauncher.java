@@ -3,11 +3,12 @@ package com.ibrahim.game;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
-// Please note that on macOS your application needs to be started with the -XstartOnFirstThread JVM argument
 public class DesktopLauncher {
     public static void main(String[] arg) {
         Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
-        config.setForegroundFPS(60);
+        config.setWindowedMode(1200, 900);
+        config.setIdleFPS(30);
+        config.setForegroundFPS(144);
         config.setTitle("OpenWorld");
         new Lwjgl3Application(new OpenWorldGame(), config);
     }
