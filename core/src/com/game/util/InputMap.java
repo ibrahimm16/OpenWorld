@@ -1,4 +1,4 @@
-package com.ibrahim.game.util;
+package com.game.util;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -18,8 +18,10 @@ public class InputMap extends HashMap<Integer, Boolean> implements InputProcesso
         leftClicked = false;
     }
 
-    public boolean pressed(Integer key) {
-        return getOrDefault(key, false);
+    public boolean pressed(String key) {
+        int keyCode = Input.Keys.valueOf(key.toUpperCase());
+
+        return getOrDefault(keyCode, false);
     }
 
     public boolean keyDown(int keycode) {
